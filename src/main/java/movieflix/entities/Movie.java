@@ -18,7 +18,8 @@ import java.util.Set;
 public class Movie {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer movieId;
+    private Integer movie_id;
+
     @Column(nullable = false,length = 200)
     @NotBlank(message = "Please provide movie's title!")
     private String title;
@@ -26,15 +27,18 @@ public class Movie {
     @Column(nullable = false)
     @NotBlank(message = "Please provide movie's director!")
     private String director;
+
     @Column(nullable = false)
     @NotBlank(message = "Please provide movie's studio!")
     private String studio;
+
     @ElementCollection
     @CollectionTable(name="movie_cast")
     private Set<String> movieCast;
 
     @Column(nullable = false)
-    private Integer releseYear;
+    private Integer release_year;
+
     @Column(nullable = false)
     @NotBlank(message = "Please provide movie's poster!")
     private String poster;
